@@ -1,0 +1,252 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Learning HTML5</title>
+
+  <meta name="description" content="An example for learning HTML5">
+  <meta name="keyword" content="html5 css javascript">
+
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      color: #325050;
+      background: #E5EDE8;
+      font-family: sans-serif;
+    }
+
+    header {
+      height: 230px;
+      padding: 70px 0 0 0;
+
+      color: #fff;
+      font-size: 1.7rem;
+      text-align: center;
+
+      background-image: url(background.jpg);
+      background-size: cover;
+    }
+
+    a {
+      color: #0d8ba1;
+      text-decoration: none;
+    }
+
+    .main {
+      width: 66.6%;
+      padding: 3%;
+      background: #FFF;
+    }
+
+    article h3 {
+      color: #2e484c;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    article::after {
+      display: block;
+      content: " ";
+      margin: 3rem;
+    }
+
+    .sidebar {
+      position: absolute;
+      top: 360px;
+      right: 0;
+      width: 33.3%;
+    }
+
+    .sidebar ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin: 0 30% 0 25%;
+      width: 50%;
+      padding: 1.5em 10%;
+      border-top: solid 1px #d9e3dc;
+      color: #c0cac3;
+    }
+
+    .sidebar li.drop-over {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* icon fonts */
+    @font-face {
+      font-family: 'verdemoderna';
+      src:url('verdemoderna.ttf') format('truetype');
+    }
+
+    footer {
+      padding: 3rem;
+      background: #134347;
+      text-align: center;
+    }
+
+    footer a {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      width: 52px;
+      height: 0;
+      padding: 52px 0 0 0;
+      margin: 0 1.2em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    footer a::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      font-size: 48px;
+      font-family: 'verdemoderna';
+    }
+
+    footer a.icon-html::before {content: "5";}
+    footer a.icon-html:hover::before, footer a.icon-html:focus::before {content: "%";}
+    footer a.icon-css::before {content: "3";}
+    footer a.icon-css:hover::before, footer a.icon-css:focus::before {content: "#";}
+    footer a.icon-github::before {content: "g";}
+    footer a.icon-github:hover::before, footer a.icon-github:focus::before {content: "G";}
+
+    #map {
+      height: 33.3%;
+      width: 72.6%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Learning HTML5</h1>
+  </header>
+
+  <section class="main">
+    <article>
+      <h3>Lorem Ipsum #1</h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie ante ac enim varius tempor. Cras viverra urna eget libero fringilla ultricies. Ut orci urna, lacinia eget mi eu, pharetra blandit nisi. Curabitur ac consectetur enim, eu elementum metus. Ut pharetra scelerisque lacus sed elementum. Duis eu risus dui. Curabitur turpis lorem, efficitur in diam sed, vestibulum elementum ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ac magna at erat fringilla mattis. In id lorem et eros efficitur facilisis. Sed bibendum nisi quis ante pretium, ac luctus elit tincidunt. Proin imperdiet eu est et consectetur.</p>
+    </article>
+  </section>
+
+  <div id="map">
+  </div>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li draggable="true" class="menu-item"><a href="https://developer.mozilla.org/ko/docs/Web" title="Mozilla Developer Network">MDN</a></li>
+        <li draggable="true" class="menu-item"><a href="http://stackoverflow.com" title="Stack Overflow">Stack Overflow</a></li>
+        <li draggable="true" class="menu-item"><a href="http://jsfiddle.net" title="JavaScript Playground">jsfiddle.net</a></li>
+        <li draggable="true" class="menu-item"><a href="https://github.com" title="A social network for developers">GitHub</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <footer>
+    <a href="http://validator.w3.org/check/referer" title="HTML5 Validator" class="icon-html">HTML5</a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer" title="CSS Validator" class="icon-css">CSS</a>
+    <a href="https://github.com" title="A social network for developers" class="icon-github">Github</a>
+  </footer>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmG5hlISodVKOnG1jCS3wGER8iCP33h0I"></script>
+
+    <script>
+    /* Drag & Drop */
+    var dragElem = null;
+
+    function handleDragStart(e) {
+      this.classList.add('drop-over');
+
+      dragElem = this;
+
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/html', this.innerHTML);
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+
+      e.dataTransfer.dropEffect = 'move';
+
+      return false;
+    }
+
+    function handleDragEnter(e) {
+      this.classList.add('drop-over');
+    }
+
+    function handleDragLeave(e) {
+      this.classList.remove('drop-over');
+    }
+
+    function handleDrop(e) {
+      if (e.stopPropagation) {
+        e.stopPropagation();
+      }
+
+      if (dragElem != this) {
+        dragElem.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+      }
+
+      return false;
+    }
+
+    function handleDragEnd(e) {
+      var cols = document.querySelectorAll('.sidebar .menu-item');
+
+      [].forEach.call(cols, function (col) {
+        col.classList.remove('drop-over');
+      });
+    }
+
+    function initDragAndDrop(selector) {
+      var cols = document.querySelectorAll('.sidebar .menu-item');
+
+      [].forEach.call(cols, function(col) {
+        col.addEventListener('dragstart', handleDragStart, false);
+        col.addEventListener('dragenter', handleDragEnter, false);
+        col.addEventListener('dragover', handleDragOver, false);
+        col.addEventListener('dragleave', handleDragLeave, false);
+        col.addEventListener('drop', handleDrop, false);
+        col.addEventListener('dragend', handleDragEnd, false);
+      });
+    }
+
+    initDragAndDrop('.sidebar .menu-item');
+
+    /* Google Maps */
+    function initMap(latitude, longitude) {
+      var pos = {lat: latitude, lng: longitude};
+      
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        scrollwheel: false,
+        zoom: 15
+      });
+
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map
+      });
+    }
+
+    initMap(37.5722910442, 126.972874442);
+
+    /*
+      navigator.geolocation.getCurrentPosition(function(position) {
+        initMap(position.coords.latitude, position.coords.longitude);
+      });
+    */
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Learning HTML5</title>
+
+  <meta name="description" content="An example for learning HTML5">
+  <meta name="keyword" content="html5 css javascript">
+
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      color: #325050;
+      background: #E5EDE8;
+      font-family: sans-serif;
+    }
+
+    header {
+      height: 230px;
+      padding: 70px 0 0 0;
+
+      color: #fff;
+      font-size: 1.7rem;
+      text-align: center;
+
+      background-image: url(background.jpg);
+      background-size: cover;
+    }
+
+    a {
+      color: #0d8ba1;
+      text-decoration: none;
+    }
+
+    .main {
+      width: 66.6%;
+      padding: 3%;
+      background: #FFF;
+    }
+
+    article h3 {
+      color: #2e484c;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    article::after {
+      display: block;
+      content: " ";
+      margin: 3rem;
+    }
+
+    .sidebar {
+      position: absolute;
+      top: 360px;
+      right: 0;
+      width: 33.3%;
+    }
+
+    .sidebar ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin: 0 30% 0 25%;
+      width: 50%;
+      padding: 1.5em 10%;
+      border-top: solid 1px #d9e3dc;
+      color: #c0cac3;
+    }
+
+    /* icon fonts */
+    @font-face {
+      font-family: 'verdemoderna';
+      src:url('verdemoderna.ttf') format('truetype');
+    }
+
+    footer {
+      padding: 3rem;
+      background: #134347;
+      text-align: center;
+    }
+
+    footer a {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      width: 52px;
+      height: 0;
+      padding: 52px 0 0 0;
+      margin: 0 1.2em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    footer a::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      font-size: 48px;
+      font-family: 'verdemoderna';
+    }
+
+    footer a.icon-html::before {content: "5";}
+    footer a.icon-html:hover::before, footer a.icon-html:focus::before {content: "%";}
+    footer a.icon-css::before {content: "3";}
+    footer a.icon-css:hover::before, footer a.icon-css:focus::before {content: "#";}
+    footer a.icon-github::before {content: "g";}
+    footer a.icon-github:hover::before, footer a.icon-github:focus::before {content: "G";}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Learning HTML5</h1>
+  </header>
+
+  <section class="main">
+    <article>
+      <h3>Lorem Ipsum #1</h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie ante ac enim varius tempor. Cras viverra urna eget libero fringilla ultricies. Ut orci urna, lacinia eget mi eu, pharetra blandit nisi. Curabitur ac consectetur enim, eu elementum metus. Ut pharetra scelerisque lacus sed elementum. Duis eu risus dui. Curabitur turpis lorem, efficitur in diam sed, vestibulum elementum ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ac magna at erat fringilla mattis. In id lorem et eros efficitur facilisis. Sed bibendum nisi quis ante pretium, ac luctus elit tincidunt. Proin imperdiet eu est et consectetur.</p>
+
+      <p>Nam eget finibus lorem. Praesent hendrerit eu eros eget tempor. Ut mattis, tellus id tincidunt bibendum, ipsum lacus ornare turpis, luctus suscipit mi dolor vel diam. Duis vitae arcu vitae nisi pretium pellentesque eu eget justo. Aliquam gravida ante lectus, non pretium urna commodo eget. Fusce egestas ut ligula eget dapibus. Proin pulvinar lacus sed felis congue, et lacinia lacus fermentum. Aliquam condimentum leo ut arcu mattis feugiat. Aenean ut mauris ac lectus posuere hendrerit. Nullam iaculis accumsan viverra. Donec maximus elit at velit malesuada posuere. Etiam et eleifend lacus.</p>
+    </article>
+
+    <article>
+      <h3>Lorem Ipsum #2</h3>
+
+      <p>Proin tincidunt varius eros. Quisque efficitur finibus scelerisque. Morbi ornare accumsan dui in convallis. Aliquam erat volutpat. Aliquam accumsan dui quis ante ultrices, non vestibulum nunc dictum. Morbi maximus lorem sed sem varius mollis. Sed lacinia, urna a accumsan porta, elit magna elementum erat, imperdiet sagittis dui est eget enim. Curabitur egestas ipsum non nunc molestie accumsan. Vivamus ut iaculis ante. Sed elit ante, vulputate et ultricies sit amet, aliquet malesuada nunc. Nulla et bibendum nibh. Sed eu tortor a enim commodo tincidunt.</p>
+
+      <p>Praesent finibus, lacus in dignissim auctor, dolor lacus efficitur lacus, et tristique libero nisi sed metus. Nulla a mauris fringilla, vehicula dui vel, ullamcorper libero. Nunc eu libero nulla. Phasellus aliquet luctus nunc eget tempor. Donec eget feugiat justo, eu varius leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum magna neque, mattis a rhoncus eu, laoreet nec dui. Aliquam eu sapien posuere, euismod leo ac, posuere ex. Fusce quis varius lacus, ut euismod leo. Morbi condimentum, urna ac posuere pretium, mauris mi ultrices urna, ut convallis est tortor bibendum purus. Maecenas eu augue turpis. Mauris quam magna, rutrum sit amet mauris in, volutpat molestie justo. Aliquam lectus quam, porta ultrices facilisis eget, rutrum eu risus. Fusce venenatis dui vel luctus mattis. In aliquet non quam non fermentum. Cras sed laoreet ante, vel volutpat ante.</p>
+    </article>
+  </section>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="https://developer.mozilla.org/ko/docs/Web" title="Mozilla Developer Network">MDN</a></li>
+        <li><a href="http://stackoverflow.com" title="Stack Overflow">Stack Overflow</a></li>
+        <li><a href="http://jsfiddle.net" title="JavaScript Playground">jsfiddle.net</a></li>
+        <li><a href="https://github.com" title="A social network for developers">GitHub</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <footer>
+    <a href="http://validator.w3.org/check/referer" title="HTML5 Validator" class="icon-html">HTML5</a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer" title="CSS Validator" class="icon-css">CSS</a>
+    <a href="https://github.com" title="A social network for developers" class="icon-github">Github</a>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Learning HTML5</title>
+
+  <meta name="description" content="An example for learning HTML5">
+  <meta name="keyword" content="html5 css javascript">
+
+  <link rel="stylesheet" media="screen" href="screen.css">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmG5hlISodVKOnG1jCS3wGER8iCP33h0I"></script>
+    <script type="text/javascript" src="d3.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+      initDragAndDrop('.sidebar .menu-item');
+
+      initMap(37.5722910442, 126.972874442);
+
+      /*
+        navigator.geolocation.getCurrentPosition(function(position) {
+          initMap(position.coords.latitude, position.coords.longitude);
+        });
+      */
+
+      initGraph('canvas', "https://gist.githubusercontent.com/mbostock/4062045/raw/5916d145c8c048a6e3086915a6be464467391c62/miserables.json");
+    });
+    </script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Learning HTML5</h1>
+  </header>
+
+  <section class="main">
+    <article>
+      <h3>Lorem Ipsum #1</h3>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie ante ac enim varius tempor. Cras viverra urna eget libero fringilla ultricies. Ut orci urna, lacinia eget mi eu, pharetra blandit nisi. Curabitur ac consectetur enim, eu elementum metus. Ut pharetra scelerisque lacus sed elementum. Duis eu risus dui. Curabitur turpis lorem, efficitur in diam sed, vestibulum elementum ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ac magna at erat fringilla mattis. In id lorem et eros efficitur facilisis. Sed bibendum nisi quis ante pretium, ac luctus elit tincidunt. Proin imperdiet eu est et consectetur.</p>
+    </article>
+  </section>
+
+  <div id="map">
+  </div>
+
+  <div id="chart">
+    <svg id="canvas"></svg>
+  </div>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li draggable="true" class="menu-item"><a href="https://developer.mozilla.org/ko/docs/Web" title="Mozilla Developer Network">MDN</a></li>
+        <li draggable="true" class="menu-item"><a href="http://stackoverflow.com" title="Stack Overflow">Stack Overflow</a></li>
+        <li draggable="true" class="menu-item"><a href="http://jsfiddle.net" title="JavaScript Playground">jsfiddle.net</a></li>
+        <li draggable="true" class="menu-item"><a href="https://github.com" title="A social network for developers">GitHub</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <footer>
+    <a href="http://validator.w3.org/check/referer" title="HTML5 Validator" class="icon-html">HTML5</a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer" title="CSS Validator" class="icon-css">CSS</a>
+    <a href="https://github.com" title="A social network for developers" class="icon-github">Github</a>
+  </footer>
+
+</body>
+</html>

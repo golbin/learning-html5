@@ -1,0 +1,136 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #325050;
+  background: #E5EDE8;
+  font-family: sans-serif;
+}
+
+header {
+  height: 230px;
+  padding: 70px 0 0 0;
+
+  color: #fff;
+  font-size: 1.7rem;
+  text-align: center;
+
+  background-image: url(background.jpg);
+  background-size: cover;
+}
+
+a {
+  color: #0d8ba1;
+  text-decoration: none;
+}
+
+.main {
+  width: 66.6%;
+  padding: 3%;
+  background: #FFF;
+}
+
+article h3 {
+  color: #2e484c;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+article::after {
+  display: block;
+  content: " ";
+  margin: 3rem;
+}
+
+.sidebar {
+  position: absolute;
+  top: 360px;
+  right: 0;
+  width: 33.3%;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 0 30% 0 25%;
+  width: 50%;
+  padding: 1.5em 10%;
+  border-top: solid 1px #d9e3dc;
+  color: #c0cac3;
+}
+
+/* For Draggable */
+.sidebar li.drop-over {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* icon fonts */
+@font-face {
+  font-family: 'verdemoderna';
+  src:url('verdemoderna.ttf') format('truetype');
+}
+
+footer {
+  padding: 3rem;
+  background: #134347;
+  text-align: center;
+}
+
+footer a {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 52px;
+  height: 0;
+  padding: 52px 0 0 0;
+  margin: 0 1.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+footer a::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  font-size: 48px;
+  font-family: 'verdemoderna';
+}
+
+footer a.icon-html::before {content: "5";}
+footer a.icon-html:hover::before, footer a.icon-html:focus::before {content: "%";}
+footer a.icon-css::before {content: "3";}
+footer a.icon-css:hover::before, footer a.icon-css:focus::before {content: "#";}
+footer a.icon-github::before {content: "g";}
+footer a.icon-github:hover::before, footer a.icon-github:focus::before {content: "G";}
+
+/* For Google Maps */
+#map {
+  height: 33.3%;
+  width: 72.6%;
+}
+
+/* For D3.js examples */
+#chart {
+  width: 72.6%;
+  background: #fff;
+}
+
+#chart svg {
+  width: 100%;
+  height: 500px;
+}
+
+#chart svg .links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+#chart svg .nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
