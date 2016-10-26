@@ -11,7 +11,7 @@
   - 인터넷에 올라와 있는 문서를 서로 연결하기 위한 목적을 가진 문서
 - HTML
   - HyperText를 표현/구현하기 위한 언어
-- &lt;a href="https://www.w3.org"&gt;W3C&lt;/a&gt;
+- [W3C](https://www.w3.org/)
 
 ---
 
